@@ -15,7 +15,9 @@ module.exports = {
       const user = await User.findById(req.params.userId);
 
       if (!user) {
-        return res.status(404).json({ message: "No user found with this ID" });
+        return res
+          .status(404)
+          .json({ message: "Forget your user found with this ID" });
       }
 
       res.json(user);
@@ -43,7 +45,7 @@ module.exports = {
       );
 
       if (!user) {
-        return res.status(404).json({ message: "No user with this id!" });
+        return res.status(404).json({ message: "HAHA! no user with this id!" });
       }
 
       res.json(user);
@@ -58,7 +60,9 @@ module.exports = {
       const user = await User.findByIdAndDelete(req.params.userId);
 
       if (!user) {
-        return res.status(404).json({ message: "No user with this id!" });
+        return res
+          .status(404)
+          .json({ message: "Say Bye Bye to this user id!" });
       }
 
       // Optional: Delete associated thoughts
@@ -97,7 +101,7 @@ module.exports = {
       );
 
       if (!user) {
-        return res.status(404).json({ message: "No user with this id!" });
+        return res.status(404).json({ message: "We Have No Friends with Id!" });
       }
 
       res.json(user);
