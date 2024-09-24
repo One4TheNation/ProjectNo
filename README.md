@@ -1,6 +1,6 @@
 ## ProjectNo
 
-![Project Preview]()
+![Project Preview](./image/Screen%20Shot%202024-09-24%20at%2012.52.58%20AM.png)
 
 ## Table of Contents
 

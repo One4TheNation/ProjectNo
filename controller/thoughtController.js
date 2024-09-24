@@ -69,14 +69,14 @@ module.exports = {
 
   async deleteThought(req, res) {
     try {
-      const thought = await Thought.findOneAndRemove({
+      const thought = await Thought.findOneAndDelete({
         _id: req.params.thoughtId,
       });
 
       if (!thought) {
         return res
           .status(404)
-          .json({ message: "Goosh no ID with you thought!" });
+          .json({ message: "Burnt your ID for a thought!" });
       }
 
       const user = await User.findOneAndUpdate(
@@ -87,13 +87,14 @@ module.exports = {
 
       if (!user) {
         return res.status(404).json({
-          message: "No User ID, but we created you thought i guess!",
+          message: "No User ID, but we created your thought I guess!",
         });
       }
 
-      res.json({ message: "Your Thought is Deleted!" });
+      res.json({ message: "Thought Successfully Burned", thought });
     } catch (err) {
-      res.status(500).json(err);
+      console.error(err);
+      res.status(500).json({ message: "Server error", error: err.message });
     }
   },
 
