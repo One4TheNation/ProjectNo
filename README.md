@@ -34,7 +34,7 @@ None
 
 ## Test
 
-npm i, npm start, insomnia (test routes)
+npm i, npm run dev, insomnia (test routes)
 
 ## Questions
 
